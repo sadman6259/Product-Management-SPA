@@ -1,0 +1,22 @@
+  <table class="table table-hover">
+  <thead>
+    <th>Product Name</th>
+    <th>Product Code</th>
+    <th>Price</th>
+    <th>Quantity Available</th>
+
+
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pro of orderservice.productlist">
+       
+      <td >{{pro.ProductName}}</td>
+      <td >{{pro.ProductCode}}</td>
+      <td >{{pro.Price}}</td>
+      <td >{{pro.QuantityAvailable}}</td>
+
+      <td></td>
+    </tr>
+  </tbody>
+</table>

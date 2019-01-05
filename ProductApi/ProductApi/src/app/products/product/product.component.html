@@ -1,0 +1,49 @@
+<h4 style="text-align:center;color:cornflowerblue">Ordered Products</h4>
+<table class="table table-hover table table-bordered ">
+    <thead>
+      <th>Customer Code</th>
+      <th>Product Name</th>
+      <th>Product Code</th>
+      <th>Price</th>
+      <th>Quantity</th>
+       <th>Date</th>
+       <th>Total Price</th>
+
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of orderservice.list">
+        <td (click)="populateForm(emp)">{{emp.CustomerCode}}</td>
+        <td (click)="populateForm(emp)">{{emp.ProductName}}</td>
+        <td (click)="populateForm(emp)">{{emp.ProductCode}}</td>
+        <td (click)="populateForm(emp)">{{emp.Price}}</td>
+        <td (click)="populateForm(emp)">{{emp.Quantity}}</td>
+        <td (click)="populateForm(emp)">{{emp.Date}}</td>
+        <td (click)="populateForm(emp)">{{emp.TotalPrice}}</td>
+        <td > <button (click)="onDelete(emp.OrderId)"class="btn btn-sm btn-outline-danger"> X</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+  <div class=" alert alert-success"style="text-align:center">
+    <strong>Management Section</strong>
+  </div>
+  </div>
+  
+    
+    <div class="form-group col-md-6">
+        <label>Order Limit:</label>
+        <input type="text"class="form-control"id="renderedorder" value="{{ getTotalRendered() }}" placeholder="Total Rendered Order"readonly >
+        <br>
+  <label>Total Order Taken:</label>
+  <input type="text"class="form-control"id="totalorder" value='{{ getTotal() }}' placeholder="Total Order Taken"readonly >
+  <br>
+  
+  <label>Remaining Order Limit:</label>
+
+  <input type="text"class="form-control"id="remainedorder" value="{{ getRemaining() }}" placeholder="Order Remaining"readonly >
+
+
+  </div>
+  </div>
